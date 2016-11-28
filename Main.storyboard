@@ -66,10 +66,10 @@
             </objects>
             <point key="canvasLocation" x="692" y="1431"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Grocery Item View Controller-->
         <scene sceneID="1L2-05-BNu">
             <objects>
-                <viewController id="8zP-3z-yjV" sceneMemberID="viewController">
+                <viewController id="8zP-3z-yjV" customClass="AddGroceryItemViewController" customModule="GroceryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zav-WY-jwv"/>
                         <viewControllerLayoutGuide type="bottom" id="02S-E6-4E5"/>
@@ -154,7 +154,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0wJ-qX-7Db">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Beg-Wf-NXP" detailTextLabel="4gy-bP-ziK" style="IBUITableViewCellStyleValue1" id="shn-ew-UbS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Beg-Wf-NXP" style="IBUITableViewCellStyleDefault" id="shn-ew-UbS">
                                         <rect key="frame" x="0.0" y="92" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="shn-ew-UbS" id="dLz-Ew-eQ2">
@@ -162,14 +162,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Beg-Wf-NXP">
-                                                    <frame key="frameInset" minX="15" minY="11" width="34" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4gy-bP-ziK">
-                                                    <frame key="frameInset" minX="284" minY="11" width="44" height="21"/>
+                                                    <frame key="frameInset" minX="15" width="313" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -211,10 +204,10 @@
             </objects>
             <point key="canvasLocation" x="692" y="583"/>
         </scene>
-        <!--Title-->
+        <!--Grocery Items-->
         <scene sceneID="siw-Lz-eKu">
             <objects>
-                <viewController id="Br5-Sn-jAo" sceneMemberID="viewController">
+                <viewController id="Br5-Sn-jAo" customClass="GroceryItemsViewController" customModule="GroceryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CNb-jT-Zup"/>
                         <viewControllerLayoutGuide type="bottom" id="1wB-eJ-dTU"/>
@@ -228,7 +221,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="5qV-f8-5sB" detailTextLabel="YM8-pH-Xki" style="IBUITableViewCellStyleValue1" id="WGb-49-GMS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="5qV-f8-5sB" detailTextLabel="YM8-pH-Xki" style="IBUITableViewCellStyleValue1" id="WGb-49-GMS">
                                         <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WGb-49-GMS" id="diM-Zy-eq5">
@@ -257,8 +250,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="zJ7-e0-mzb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="p8U-U3-AFF"/>
+                    <navigationItem key="navigationItem" title="Grocery Items" id="zJ7-e0-mzb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="p8U-U3-AFF">
+                            <connections>
+                                <segue destination="8zP-3z-yjV" kind="presentation" id="jGl-GR-mj3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dd-o9-jFG" userLabel="First Responder" sceneMemberID="firstResponder"/>

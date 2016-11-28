@@ -75,8 +75,7 @@ extension DataManager {
         } ?? []
     }
     
-    
-    func create(data: (itemName: String?, itemQuantity: Int, itemDescription: String?)) throws {
+    func create(data: (itemName: String?, itemQuantity: Int)) throws {
         guard let ctx = managedObjectContext else {
             throw DataError.BadManagedObjectContext("The Managed Object Context was nil")
         }
@@ -88,26 +87,25 @@ extension DataManager {
         let obj = GroceryItem(entity: entity, insertInto: ctx)
         obj.itemName = data.itemName
         obj.itemQuantity = Int16(data.itemQuantity)
-        obj.itemDescription = data.itemDescription
         obj.groceryList = groceryLists.value(at: selectedGroceryListIndex)
         
         try? save()
     }
 
     
-    func getGroceryItems(from indexPath: IndexPath) -> (itemName: String?, itemQuantity: Int, itemDescription: String?)? {
+    func getGroceryItems(from indexPath: IndexPath) -> (itemName: String?, itemQuantity: Int)? {
         guard let item = groceryItems.value(at: indexPath.row) else {
             return nil
         }
         
-        return (item.itemName, Int(item.itemQuantity), item.itemDescription)
+        return (item.itemName, Int(item.itemQuantity))
     }
     
-    func getSelectedGroceryItem() -> (itemName: String?, itemQuantity: Int, itemDescription: String?)? {
+    func getSelectedGroceryItem() -> (itemName: String?, itemQuantity: Int)? {
         guard let item = groceryItems.value(at: selectedGroceryItemIndex) else {
             return nil
         }
-        return (item.itemName, Int(item.itemQuantity), item.itemDescription)
+        return (item.itemName, Int(item.itemQuantity))
     }
 
     
