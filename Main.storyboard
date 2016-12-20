@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBx-Yc-Hxo">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="List Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBx-Yc-Hxo">
                                 <frame key="frameInset" minX="16" minY="86" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -85,14 +84,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sjm-ER-52U">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Item Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sjm-ER-52U">
                                 <frame key="frameInset" minX="16" minY="85" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wPj-zE-cSb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Item Quantity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wPj-zE-cSb">
                                 <frame key="frameInset" minX="16" minY="130" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -106,6 +105,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="dismissKeyboard" destination="8zP-3z-yjV" eventType="touchUpInside" id="Ohr-Li-NNb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dZ-5O-ZiG">
                                 <frame key="frameInset" minX="207" minY="607" width="112" height="30"/>
@@ -114,10 +116,17 @@
                                 <state key="normal" title="Add">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addGroceryItem" destination="8zP-3z-yjV" eventType="touchUpInside" id="gPK-Jd-QAr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="itemName" destination="sjm-ER-52U" id="dbE-1m-NN5"/>
+                        <outlet property="itemQuantity" destination="wPj-zE-cSb" id="Ngj-xU-dLq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4US-Jf-J9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,18 +160,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0wJ-qX-7Db">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Xlh-No-ADL">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Beg-Wf-NXP" style="IBUITableViewCellStyleDefault" id="shn-ew-UbS">
-                                        <rect key="frame" x="0.0" y="92" width="343" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="szY-4o-WLZ" detailTextLabel="vzC-zS-h0L" style="IBUITableViewCellStyleValue1" id="8ka-l5-Vai">
+                                        <rect key="frame" x="0.0" y="120" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="shn-ew-UbS" id="dLz-Ew-eQ2">
-                                            <frame key="frameInset" width="343" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ka-l5-Vai" id="zNs-zw-4Xq">
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Beg-Wf-NXP">
-                                                    <frame key="frameInset" minX="15" width="313" height="43"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="szY-4o-WLZ">
+                                                    <frame key="frameInset" minX="15" minY="11" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vzC-zS-h0L">
+                                                    <frame key="frameInset" minX="316" minY="11" width="44" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -171,22 +187,22 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Br5-Sn-jAo" kind="show" id="FXq-op-4QO"/>
+                                            <segue destination="Br5-Sn-jAo" kind="show" id="gPc-rW-GCP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="C7h-H9-gGd" id="9n0-FZ-j5G"/>
-                                    <outlet property="delegate" destination="C7h-H9-gGd" id="EZ3-NX-u38"/>
+                                    <outlet property="dataSource" destination="C7h-H9-gGd" id="uT8-Dv-57U"/>
+                                    <outlet property="delegate" destination="C7h-H9-gGd" id="Gsf-AV-u0Q"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0wJ-qX-7Db" firstAttribute="trailing" secondItem="vIt-hf-MBm" secondAttribute="trailingMargin" id="Gnf-BC-d6e"/>
-                            <constraint firstItem="0wJ-qX-7Db" firstAttribute="leading" secondItem="vIt-hf-MBm" secondAttribute="leadingMargin" id="HX3-sU-k6X"/>
-                            <constraint firstItem="0wJ-qX-7Db" firstAttribute="top" secondItem="cpC-hh-XBL" secondAttribute="bottom" id="Sho-lz-wJP"/>
-                            <constraint firstItem="Zdh-rO-MIi" firstAttribute="top" secondItem="0wJ-qX-7Db" secondAttribute="bottom" id="rp7-2Z-J7M"/>
+                            <constraint firstItem="Xlh-No-ADL" firstAttribute="leading" secondItem="vIt-hf-MBm" secondAttribute="leading" id="86S-JK-LCw"/>
+                            <constraint firstAttribute="trailing" secondItem="Xlh-No-ADL" secondAttribute="trailing" id="SvX-0D-YNy"/>
+                            <constraint firstItem="Zdh-rO-MIi" firstAttribute="top" secondItem="Xlh-No-ADL" secondAttribute="bottom" id="gdH-Vk-eCx"/>
+                            <constraint firstItem="Xlh-No-ADL" firstAttribute="top" secondItem="vIt-hf-MBm" secondAttribute="top" id="ySb-sh-PBR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Grocery Lists" id="Qsz-P5-whh">
@@ -197,12 +213,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="groceryListTableView" destination="0wJ-qX-7Db" id="uxH-hb-r1q"/>
+                        <outlet property="groceryListTableView" destination="Xlh-No-ADL" id="ZD3-1Z-Y3g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QjD-qc-eAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="583"/>
+            <point key="canvasLocation" x="692" y="582.45877061469275"/>
         </scene>
         <!--Grocery Items-->
         <scene sceneID="siw-Lz-eKu">
@@ -216,13 +232,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tjw-gr-GP1">
-                                <frame key="frameInset" minY="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="tjw-gr-GP1">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="5qV-f8-5sB" detailTextLabel="YM8-pH-Xki" style="IBUITableViewCellStyleValue1" id="WGb-49-GMS">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="120" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WGb-49-GMS" id="diM-Zy-eq5">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -246,9 +260,19 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Br5-Sn-jAo" id="YjP-UJ-uPI"/>
+                                    <outlet property="delegate" destination="Br5-Sn-jAo" id="VWA-sF-cyB"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tjw-gr-GP1" firstAttribute="top" secondItem="mGs-30-YmF" secondAttribute="top" id="LIm-Sv-j5B"/>
+                            <constraint firstItem="tjw-gr-GP1" firstAttribute="leading" secondItem="mGs-30-YmF" secondAttribute="leading" id="WdV-BN-NfL"/>
+                            <constraint firstAttribute="trailing" secondItem="tjw-gr-GP1" secondAttribute="trailing" id="hYJ-P3-e09"/>
+                            <constraint firstItem="1wB-eJ-dTU" firstAttribute="top" secondItem="tjw-gr-GP1" secondAttribute="bottom" id="l4l-Ra-Job"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Grocery Items" id="zJ7-e0-mzb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="p8U-U3-AFF">
@@ -257,6 +281,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="groceryItemsTableView" destination="tjw-gr-GP1" id="qsW-JY-IEl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dd-o9-jFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

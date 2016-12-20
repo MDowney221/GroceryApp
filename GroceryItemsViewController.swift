@@ -1,6 +1,6 @@
 //
 //  GroceryItemsViewController.swift
-//  GroceryApp
+//  GroceryApp/Users/matthewddowney/Development/GroceryApp/GroceryApp.xcodeproj
 //
 //  Created by Matthew Downey on 11/27/16.
 //  Copyright © 2016 Matthew Downey. All rights reserved.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class GroceryItemsViewController: UIViewController {
+class GroceryItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet var groceryItemsTableView: UITableView?
+    @IBOutlet var groceryItemsTableView: UITableView!
     
     let manager = DataManager.shared
     
@@ -21,7 +21,7 @@ class GroceryItemsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        manager.loadGroceryListData()
+        manager.loadGroceryItemData()
         groceryItemsTableView?.reloadData()
     }
 
@@ -35,17 +35,17 @@ class GroceryItemsViewController: UIViewController {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = groceryItemsTableView?.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         let item = manager.getGroceryItems(from: indexPath)
-        cell?.textLabel?.text = item?.itemName
-        cell?.detailTextLabel?.text = "Qty: \(item?.itemQuantity ?? 0)"
+        cell.textLabel?.text = item?.itemName
+        cell.detailTextLabel?.text = "Qty: \(item?.itemQuantity ?? 0)"
         
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        groceryItemsTableView?.deselectRow(at: indexPath, animated: UIView.areAnimationsEnabled)
+        groceryItemsTableView.deselectRow(at: indexPath, animated: UIView.areAnimationsEnabled)
         
         manager.selectedGroceryItemIndex = indexPath.row
     }
