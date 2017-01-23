@@ -2,17 +2,18 @@
 //  GroceryItem+CoreDataProperties.swift
 //  GroceryApp
 //
-//  Created by Matthew Downey on 11/28/16.
-//  Copyright © 2016 Matthew Downey. All rights reserved.
+//  Created by Matthew Downey on 1/22/17.
+//  Copyright © 2017 Matthew Downey. All rights reserved.
 //
 
 import Foundation
 import CoreData
 
+
 extension GroceryItem {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<GroceryItem> {
-        return NSFetchRequest<GroceryItem>(entityName: "GroceryItem");
+        return NSFetchRequest<GroceryItem>(entityName: AppConstants.Entities.groceryList);
     }
 
     @NSManaged public var itemName: String?

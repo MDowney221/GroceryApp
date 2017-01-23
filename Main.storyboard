@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="I">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -43,7 +43,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="dismissView" destination="BYZ-38-t0r" eventType="touchUpInside" id="DOZ-1V-7OI"/>
+                                    <action selector="dismiss" destination="BYZ-38-t0r" eventType="touchUpInside" id="iTz-yz-Ram"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLk-Ir-TCi">
@@ -54,14 +54,14 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="addGroceryListName" destination="BYZ-38-t0r" eventType="touchUpInside" id="AdV-6u-q1D"/>
+                                    <action selector="addGroceryList" destination="BYZ-38-t0r" eventType="touchUpInside" id="gYC-Wh-KLF"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="groceryListName" destination="IBx-Yc-Hxo" id="y6Q-0k-dME"/>
+                        <outlet property="groceryListName" destination="IBx-Yc-Hxo" id="RZs-gV-Cp8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -87,8 +87,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Item Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sjm-ER-52U">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Item Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sjm-ER-52U">
                                 <rect key="frame" x="16" y="85" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -101,7 +102,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="dismissKeyboard" destination="8zP-3z-yjV" eventType="touchUpInside" id="Ohr-Li-NNb"/>
+                                    <action selector="dismiss" destination="8zP-3z-yjV" eventType="touchUpInside" id="Yi6-Dx-00R"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dZ-5O-ZiG">
@@ -112,30 +113,27 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="addGroceryItem" destination="8zP-3z-yjV" eventType="touchUpInside" id="gPK-Jd-QAr"/>
+                                    <action selector="addGroceryItem" destination="8zP-3z-yjV" eventType="touchUpInside" id="09F-DV-bmr"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Item Quantity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wPj-zE-cSb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Item Quantity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wPj-zE-cSb">
                                 <rect key="frame" x="16" y="130" width="343" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="cYa-lm-Yni"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wPj-zE-cSb" firstAttribute="top" secondItem="sjm-ER-52U" secondAttribute="bottom" constant="15" id="hpo-TQ-kBM"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="itemName" destination="sjm-ER-52U" id="dbE-1m-NN5"/>
-                        <outlet property="itemQuantity" destination="wPj-zE-cSb" id="Ngj-xU-dLq"/>
+                        <outlet property="groceryItemName" destination="sjm-ER-52U" id="Uy3-fZ-doy"/>
+                        <outlet property="groceryItemQuantity" destination="wPj-zE-cSb" id="zxf-0e-oH3"/>
+                        <segue destination="qN2-Ax-BKq" kind="unwind" unwindAction="returnToGroceryItemsWithSeque:" id="UD5-nm-9wq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4US-Jf-J9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qN2-Ax-BKq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1724" y="1431"/>
         </scene>
@@ -158,7 +156,7 @@
         <!--Grocery Lists-->
         <scene sceneID="8d4-Ea-CIo">
             <objects>
-                <viewController id="C7h-H9-gGd" customClass="GroceryListViewController" customModule="GroceryApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C7h-H9-gGd" customClass="GroceryListsViewController" customModule="GroceryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cpC-hh-XBL"/>
                         <viewControllerLayoutGuide type="bottom" id="Zdh-rO-MIi"/>
@@ -195,13 +193,13 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Br5-Sn-jAo" kind="show" id="gPc-rW-GCP"/>
+                                            <segue destination="Br5-Sn-jAo" kind="show" id="OhT-v3-aOl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="C7h-H9-gGd" id="uT8-Dv-57U"/>
-                                    <outlet property="delegate" destination="C7h-H9-gGd" id="Gsf-AV-u0Q"/>
+                                    <outlet property="dataSource" destination="C7h-H9-gGd" id="zFo-tA-MrM"/>
+                                    <outlet property="delegate" destination="C7h-H9-gGd" id="ylK-0l-1ZZ"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -216,12 +214,12 @@
                     <navigationItem key="navigationItem" title="Grocery Lists" id="Qsz-P5-whh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q2e-fl-COd">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="FyY-b7-2IM"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="Yxs-Vi-E9e"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="groceryListTableView" destination="Xlh-No-ADL" id="ZD3-1Z-Y3g"/>
+                        <outlet property="groceryListTableView" destination="Xlh-No-ADL" id="PYC-nM-JcG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QjD-qc-eAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,7 +243,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="5qV-f8-5sB" detailTextLabel="YM8-pH-Xki" style="IBUITableViewCellStyleValue1" id="WGb-49-GMS">
-                                        <rect key="frame" x="0.0" y="55" width="375" height="45"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WGb-49-GMS" id="diM-Zy-eq5">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -270,8 +268,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Br5-Sn-jAo" id="YjP-UJ-uPI"/>
-                                    <outlet property="delegate" destination="Br5-Sn-jAo" id="VWA-sF-cyB"/>
+                                    <outlet property="dataSource" destination="Br5-Sn-jAo" id="3BM-vR-iqB"/>
+                                    <outlet property="delegate" destination="Br5-Sn-jAo" id="3lj-1N-3Lc"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -286,12 +284,12 @@
                     <navigationItem key="navigationItem" title="Grocery Items" id="zJ7-e0-mzb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="p8U-U3-AFF">
                             <connections>
-                                <segue destination="8zP-3z-yjV" kind="presentation" id="jGl-GR-mj3"/>
+                                <segue destination="8zP-3z-yjV" kind="presentation" id="wsd-rV-YXA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="groceryItemsTableView" destination="tjw-gr-GP1" id="qsW-JY-IEl"/>
+                        <outlet property="groceryItemsTableView" destination="tjw-gr-GP1" id="U7c-Qp-Keb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dd-o9-jFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
