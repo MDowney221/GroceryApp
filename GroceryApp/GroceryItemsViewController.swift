@@ -13,7 +13,6 @@ class GroceryItemsViewController: UIViewController, UITableViewDataSource, UITab
     // MARK: - Properties
     
     var viewModel: GroceryItemsViewModel = GroceryItemsViewModel()
-    var reloadData: ((Void) -> Void)? = nil
     
     @IBOutlet var groceryItemsTableView: UITableView?
     
@@ -21,7 +20,6 @@ class GroceryItemsViewController: UIViewController, UITableViewDataSource, UITab
         super.viewWillAppear(animated)
         
         groceryItemsTableView?.reloadData()
-        reloadData?()
     }
     
     var selectedGroceryList: GroceryList? {
@@ -43,7 +41,8 @@ class GroceryItemsViewController: UIViewController, UITableViewDataSource, UITab
         super.prepare(for: seque, sender: sender)
         
         if var groceryListContainer = seque.destination as? SelectedGroceryListContainer {
-            groceryListContainer.selectedGroceryList = selectedGroceryList        }
+            groceryListContainer.selectedGroceryList = selectedGroceryList
+        }
     }
 
     // MARK: - Table View
@@ -55,7 +54,7 @@ class GroceryItemsViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let item = viewModel.groceryItem(at: indexPath)
         
-        cell.textLabel?.text = item.nanme
+        cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = "Quantity: \(item.quantity)"
     }
     

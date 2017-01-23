@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddGroceryItemViewController: UIViewController, ViewModelContainer {
+class AddGroceryItemViewController: UIViewController, ViewModelContainer, SelectedGroceryListContainer {
     
     // MARK: - Properties
     

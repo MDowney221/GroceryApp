@@ -12,7 +12,6 @@
 		4019F0501DE9ED8E00EA2CBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4019F04F1DE9ED8E00EA2CBF /* Assets.xcassets */; };
 		4019F0531DE9ED8E00EA2CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4019F0511DE9ED8E00EA2CBF /* LaunchScreen.storyboard */; };
 		4019F05D1DEA140800EA2CBF /* OldGroceryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4019F05C1DEA140800EA2CBF /* OldGroceryListViewController.swift */; };
-		4019F0621DEA19E800EA2CBF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4019F0611DEA19E800EA2CBF /* DataManager.swift */; };
 		4019F0691DEB442F00EA2CBF /* GroceryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4019F0671DEB442F00EA2CBF /* GroceryApp.xcdatamodeld */; };
 		4019F0701DEB625700EA2CBF /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4019F06F1DEB625700EA2CBF /* Array+Extension.swift */; };
 		4019F0721DEBB82600EA2CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4019F0711DEBB82600EA2CBF /* Main.storyboard */; };
@@ -21,7 +20,6 @@
 		4019F0821DEBF13F00EA2CBF /* OldGroceryItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4019F0811DEBF13F00EA2CBF /* OldGroceryItemsViewController.swift */; };
 		4019F0841DEBF26C00EA2CBF /* OldAddGroceryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4019F0831DEBF26C00EA2CBF /* OldAddGroceryItemViewController.swift */; };
 		404CB0D41E352E4600F03914 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CB0D31E352E4600F03914 /* ViewModel.swift */; };
-		404CB0D71E352EB600F03914 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CB0D61E352EB600F03914 /* DataContainer.swift */; };
 		404CB0DA1E35319E00F03914 /* GroceryListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CB0D91E35319E00F03914 /* GroceryListsViewModel.swift */; };
 		404CB0EB1E35356300F03914 /* Array+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CB0EA1E35356300F03914 /* Array+ExtensionsTests.swift */; };
 		404CB0ED1E353BD200F03914 /* GroceryListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404CB0EC1E353BD200F03914 /* GroceryListsViewController.swift */; };
@@ -58,7 +56,6 @@
 		4019F0521DE9ED8E00EA2CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4019F0541DE9ED8E00EA2CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4019F05C1DEA140800EA2CBF /* OldGroceryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OldGroceryListViewController.swift; path = GroceryApp/OldGroceryListViewController.swift; sourceTree = "<group>"; };
-		4019F0611DEA19E800EA2CBF /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = GroceryApp/DataManager.swift; sourceTree = "<group>"; };
 		4019F0681DEB442F00EA2CBF /* GroceryApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroceryApp.xcdatamodel; sourceTree = "<group>"; };
 		4019F06F1DEB625700EA2CBF /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		4019F0711DEBB82600EA2CBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
@@ -67,7 +64,6 @@
 		4019F0811DEBF13F00EA2CBF /* OldGroceryItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldGroceryItemsViewController.swift; sourceTree = "<group>"; };
 		4019F0831DEBF26C00EA2CBF /* OldAddGroceryItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldAddGroceryItemViewController.swift; sourceTree = "<group>"; };
 		404CB0D31E352E4600F03914 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		404CB0D61E352EB600F03914 /* DataContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		404CB0D91E35319E00F03914 /* GroceryListsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryListsViewModel.swift; sourceTree = "<group>"; };
 		404CB0DF1E35348400F03914 /* GroceryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroceryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		404CB0E31E35348400F03914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,7 +131,6 @@
 				4019F04F1DE9ED8E00EA2CBF /* Assets.xcassets */,
 				4019F0671DEB442F00EA2CBF /* GroceryApp.xcdatamodeld */,
 				4019F0511DE9ED8E00EA2CBF /* LaunchScreen.storyboard */,
-				404CB0D51E352EA600F03914 /* Data */,
 				4019F0601DEA17F500EA2CBF /* Data */,
 				4019F06E1DEB623E00EA2CBF /* Extensions */,
 				404CB0F11E3545E900F03914 /* GroceryItems */,
@@ -167,7 +162,6 @@
 				404CB0FD1E355E0B00F03914 /* GroceryItem+CoreDataProperties.swift */,
 				404CB0FE1E355E0B00F03914 /* GroceryList+CoreDataClass.swift */,
 				404CB0FF1E355E0B00F03914 /* GroceryList+CoreDataProperties.swift */,
-				4019F0611DEA19E800EA2CBF /* DataManager.swift */,
 			);
 			name = Data;
 			path = ..;
@@ -189,14 +183,6 @@
 				404CB0D31E352E4600F03914 /* ViewModel.swift */,
 			);
 			name = Objects;
-			sourceTree = "<group>";
-		};
-		404CB0D51E352EA600F03914 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				404CB0D61E352EB600F03914 /* DataContainer.swift */,
-			);
-			name = Data;
 			sourceTree = "<group>";
 		};
 		404CB0D81E35318500F03914 /* GroceryLists */ = {
@@ -348,7 +334,6 @@
 				404CB1031E355E0B00F03914 /* GroceryList+CoreDataProperties.swift in Sources */,
 				404CB0F51E35482800F03914 /* GroceryItemsViewController.swift in Sources */,
 				404CB1071E358FB900F03914 /* AddGroceryItemViewController.swift in Sources */,
-				4019F0621DEA19E800EA2CBF /* DataManager.swift in Sources */,
 				404CB1021E355E0B00F03914 /* GroceryList+CoreDataClass.swift in Sources */,
 				404CB0F71E354EEA00F03914 /* AppConstants.swift in Sources */,
 				404CB1091E359ECB00F03914 /* ReloadContainer.swift in Sources */,
@@ -364,7 +349,6 @@
 				4019F0761DEBC02100EA2CBF /* OldAddGroceryListViewController.swift in Sources */,
 				4019F0481DE9ED8E00EA2CBF /* ViewController.swift in Sources */,
 				404CB0D41E352E4600F03914 /* ViewModel.swift in Sources */,
-				404CB0D71E352EB600F03914 /* DataContainer.swift in Sources */,
 				4019F0691DEB442F00EA2CBF /* GroceryApp.xcdatamodeld in Sources */,
 				404CB1011E355E0B00F03914 /* GroceryItem+CoreDataProperties.swift in Sources */,
 				4019F0741DEBBAF400EA2CBF /* UIVewController+Extension.swift in Sources */,

@@ -30,7 +30,7 @@ class GroceryItemsViewModel: ViewModel {
     
     // MARK: - Grocery Item Data
     
-    func groceryItem(at indexPath: IndexPath) -> (nanme: String?, quantity: Int16) {
+    func groceryItem(at indexPath: IndexPath) -> (name: String?, quantity: Int16) {
         let item: GroceryItem? = groceryItems.value(at: indexPath.row)
         return (item?.itemName, item?.itemQuantity ?? 0)
     }
